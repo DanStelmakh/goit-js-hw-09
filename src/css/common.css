@@ -10,9 +10,36 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 10px;
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.field {
+  /* border: 1px solid black; */
+  padding: 7px;
+  border-radius: 25px;
+  background-color: bisque;
+  font-size: 25px;
+  font-weight: bold;
+  box-shadow: 5px 5px 5px bisque;
+  color: white;
+}
+#datetime-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
