@@ -11,6 +11,7 @@ const minsEl = document.querySelector('[data-minutes]');
 const secsEl = document.querySelector('[data-seconds]');
 btnStart.disabled = true;
 let selectedDate = null;
+let intervalTime = null;
 
 const options = {
   enableTime: true,
@@ -43,10 +44,13 @@ const onCountdown = {
     this.isActive = true;
 
     //  console.log(startTime);
-    setInterval(() => {
+    intervalTime = setInterval(() => {
       // const currentTime = Date.now(); //текущее время
       // console.log(currentTime);
       const deltaTime = selectedDate - Date.now(); // разница между текущим временем и началом
+      if (deltaTime <= 1000) {
+        clearInterval(intervalTime);
+      }
       // console.log(deltaTime);
       const timeComponent = convertMs(deltaTime); // объект с данными в формате ДД:ЧЧ:ММ:СС
       updateDateFace(timeComponent);
